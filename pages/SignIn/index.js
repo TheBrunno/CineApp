@@ -7,7 +7,6 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import { useFonts, Figtree_300Light, Figtree_400Regular, Figtree_500Medium, Figtree_600SemiBold, Figtree_700Bold } from '@expo-google-fonts/figtree';
 
 import styles from './style';
-import style from './style';
 
 export default function SignIn() {
     const navigation = useNavigation();
