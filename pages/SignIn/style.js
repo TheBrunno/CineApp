@@ -59,8 +59,9 @@ export default StyleSheet.create({
         backgroundColor: '#16151b',
         position: 'absolute',
         left: 17,
-        top: -8,
+        top: 20,
         paddingHorizontal: 10,
+        transition: 1,
     },
     input: {
         width: 350,
