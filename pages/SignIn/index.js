@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState, createRef } from 'react';
 import { Text, View, TouchableOpacity, TextInput } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
@@ -10,6 +10,15 @@ import styles from './style';
 
 export default function SignIn() {
     const navigation = useNavigation();
+
+    const inputRefOne = createRef();
+    const inputRefTwo = createRef();
+  
+    const [isFocusedOne, setFocusOne] = useState(false);
+    const [isFocusedTwo, setFocusTwo] = useState(false);
+  
+    const [textOne, setTextOne] = useState('');
+    const [textTwo, setTextTwo] = useState('');
 
     const [fontLoaded] = useFonts({
         Figtree_300Light,
@@ -38,18 +47,26 @@ export default function SignIn() {
                 </View>
                 <View style={styles.textBoxes}>
                     <View style={styles.textBox}>
-                        <Text style={ styles.inputText }>E-mail</Text>
+                    <Text style={isFocusedOne || textOne ? [styles.inputText, { top: -8 }] : styles.inputText} onPress={() => inputRefOne.current.focus()}>E-mail</Text>
                         <TextInput
-                        style={styles.input}
-                        keyboardType='default'
+                            style={styles.input}
+                            keyboardType='default'
+                            onFocus={() => setFocusOne(true)}
+                            onBlur={() => setFocusOne(false)}
+                            onChangeText={newText => setTextOne(newText)}
+                            ref={inputRefOne}
                         />
                     </View>
                     <View style={styles.textBox}>
-                        <Text style={ styles.inputText }>Senha</Text>
+                    <Text style={isFocusedTwo || textTwo ? [styles.inputText, { top: -8 }] : styles.inputText} onPress={() => inputRefTwo.current.focus()}>Senha</Text>
                         <TextInput
-                        style={styles.input}
-                        keyboardType='default'
-                        secureTextEntry={true}
+                            style={styles.input}
+                            keyboardType='default'
+                            onFocus={() => setFocusTwo(true)}
+                            onBlur={() => setFocusTwo(false)}
+                            onChangeText={newText => setTextTwo(newText)}
+                            ref={inputRefTwo}
+                            secureTextEntry={true}
                         />
                     </View>
                 </View>
