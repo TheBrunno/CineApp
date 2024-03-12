@@ -5,6 +5,8 @@ import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/
 
 import Index from './pages/Index'
 import SignIn from './pages/SignIn'
+import SignUp from './pages/SignUp'
+
 
 const Stack = createStackNavigator();
 
@@ -24,6 +26,14 @@ const Stacks = () => {
         component={SignIn}
         options={{
           title: 'SignIn',
+          cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid,
+        }}
+      />
+      <Stack.Screen
+        name="SignUp"
+        component={SignUp}
+        options={{
+          title: 'SignUp',
           cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid,
         }}
       />
