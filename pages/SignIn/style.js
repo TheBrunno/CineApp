@@ -16,7 +16,7 @@ export default StyleSheet.create({
         left: `calc((100vw - 84%) / 2)`
     },
     signinButton: {
-        backgroundColor: '#fff',
+        backgroundColor: '#FF0036',
         width: '100%',
         height: '100%',
         borderRadius: 15,
@@ -27,7 +27,8 @@ export default StyleSheet.create({
     signinText: {
         textAlign: 'center',
         fontFamily: 'Figtree_600SemiBold',
-        fontSize: 18
+        fontSize: 18,
+        color: '#fff'
     },
     main: {
         marginTop: 60,
