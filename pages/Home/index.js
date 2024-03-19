@@ -3,6 +3,8 @@ import {React, useState} from 'react';
 import { Text, View, Image, TouchableOpacity, FlatList} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Feather from 'react-native-vector-icons/Feather';
 import { useFonts, Figtree_300Light, Figtree_400Regular, Figtree_500Medium, Figtree_600SemiBold, Figtree_700Bold } from '@expo-google-fonts/figtree';
 import styles from './style';
 
@@ -43,6 +45,16 @@ export default function Home() {
                     style={styles.linearGradientContainer}
                     >
                 </LinearGradient>
+                <View style={styles.nav}>
+                    <View style={styles.navField}>
+                        <View style={styles.navFieldSearch}>
+                            <Feather name='search' size={20} color='rgb(255, 255, 255)'/>
+                        </View>
+                    </View>
+                    <TouchableOpacity style={styles.devs} onPress={() => navigation.navigate('Devs')}>
+                        <MaterialIcons name='info' size={40} color='rgba(255, 255, 255, 0.8)'/>
+                    </TouchableOpacity>
+                </View>
                 <Image source={require('../../assets/breaking.png')} style={styles.mainMovie}/>
                 <View style={styles.infoMovie}>
                     <Text style={styles.mainMovieText}>
@@ -51,15 +63,15 @@ export default function Home() {
                     <View style={styles.tags}>
                         <View style={styles.tag}>
                             <View style={styles.circle}></View>
-                            <Text style={styles.tagText}>Tag 1</Text>
+                            <Text style={styles.tagText}>Ação</Text>
                         </View>
                         <View style={styles.tag}>
                             <View style={styles.circle}></View>
-                            <Text style={styles.tagText}>Tag 2</Text>
+                            <Text style={styles.tagText}>Suspense</Text>
                         </View>
                         <View style={styles.tag}>
                             <View style={styles.circle}></View>
-                            <Text style={styles.tagText}>Tag 3</Text>
+                            <Text style={styles.tagText}>Crime</Text>
                         </View>
                     </View>
                     <Text style={styles.synopsis}>

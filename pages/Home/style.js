@@ -111,6 +111,7 @@ export default StyleSheet.create({
         width: '100%',
         height: 170,
         display: 'flex',
+        marginBottom: 40
     },
     moreList: {
         width: '100%',
@@ -122,4 +123,40 @@ export default StyleSheet.create({
         resizemode: 'contain',
         left: 30
     },
+    nav: {
+        position: 'absolute',
+        width: '100vw',
+        height: 78,
+        backgroundColor: '#101010',
+        display: 'flex',
+        flexDirection: 'row',
+        zIndex: 10,
+        justifyContent: 'space-between'
+    },
+    navField: {
+        width: 226,
+        height: 40,
+        backgroundColor: '#1E1E1E',
+        borderColor: '#3A3940',
+        borderWidth: 1,
+        borderRadius: 20,
+        display: 'flex',
+        justifyContent: 'center',
+        paddingLeft: 11,
+        marginLeft: 25,
+        marginTop: 22
+    },
+    navFieldSearch: {
+        width: 41,
+        height: 30,
+        backgroundColor: '#FF0036',
+        borderRadius: 20,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    devs: {
+        marginTop: 22,
+        marginRight: 15
+    }
 });

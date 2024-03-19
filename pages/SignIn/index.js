@@ -104,7 +104,7 @@ export default function SignIn() {
                     </View>
                 </View>
                 <View style={styles.buttonsContainer}>
-                    <TouchableOpacity style={styles.signinButton}>
+                    <TouchableOpacity style={styles.signinButton} onPress={() => navigation.navigate('Home')}>
                         <Text style={styles.signinText}>Entrar</Text>
                     </TouchableOpacity>
                 </View>

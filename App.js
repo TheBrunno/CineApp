@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import Index from './pages/Index'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
+import Devs from './pages/Devs'
 
 
 const Stack = createStackNavigator();
@@ -16,14 +17,6 @@ const Stacks = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{
-          title: 'Home',
-          cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid,
-        }}
-      />
-      <Stack.Screen
         name="Splash"
         component={Splash}
         options={{
@@ -31,19 +24,35 @@ const Stacks = () => {
           cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid,
         }}
       />
+        <Stack.Screen
+          name="Index"
+          component={Index}
+          options={{
+            title: 'Index',
+            cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid,
+          }}
+        />
+        <Stack.Screen
+          name="SignIn"
+          component={SignIn}
+          options={{
+            title: 'SignIn',
+            cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid,
+          }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            title: 'Home',
+            cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid,
+          }}
+        />
       <Stack.Screen
-        name="Index"
-        component={Index}
+        name="Devs"
+        component={Devs}
         options={{
-          title: 'Index',
-          cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid,
-        }}
-      />
-      <Stack.Screen
-        name="SignIn"
-        component={SignIn}
-        options={{
-          title: 'SignIn',
+          title: 'Devs',
           cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid,
         }}
       />
