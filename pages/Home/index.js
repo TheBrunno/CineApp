@@ -1,10 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { Text, View, Image, TouchableOpacity } from 'react-native';
+import {React, useState} from 'react';
+import { Text, View, Image, TouchableOpacity, FlatList} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import { useFonts, Figtree_300Light, Figtree_400Regular, Figtree_500Medium, Figtree_600SemiBold, Figtree_700Bold } from '@expo-google-fonts/figtree';
-
 import styles from './style';
 
 export default function Home() {
@@ -17,13 +16,27 @@ export default function Home() {
         Figtree_600SemiBold,
         Figtree_700Bold
     });
+    const [images, setImages] = useState([
+        require('../../assets/breakinglist.png'),
+        require('../../assets/gambit.jpg'),
+        require('../../assets/squid.jpg'),
+      ]);
+
+    const [ moreImages, setMoreImages] = useState([
+        require('../../assets/saul.png'),
+        require('../../assets/blackmirror.jpg'),
+        require('../../assets/squid.jpg'),
+        require('../../assets/orange.jpg'),
+        require('../../assets/wednesday.jpg'),
+      ]);
 
     if (!fontLoaded) {
         return null;
     }
+    
 
     return (
-        <View style={styles.container}>
+        <View style={styles.container} >
             <View style={styles.imageContainer}>
                 <LinearGradient
                     colors={['transparent', '#000']}
@@ -50,11 +63,41 @@ export default function Home() {
                         </View>
                     </View>
                     <Text style={styles.synopsis}>
-                        Alguma sinopse interessante aqui que faça você querer assistir essa série.
+                    Um professor de química com cancêr de pulmão terminal junta-se a um ex-aluno para...
                     </Text>
                     <TouchableOpacity style={styles.watch}>
-                        <Text>Assitir</Text>
+                        <Text style={styles.watchText}>Assistir</Text>
                     </TouchableOpacity>
+                </View> 
+            </View>
+            <View style={styles.exclusives}>
+                <Text style={styles.exclusiveTitle}>Exclusivos</Text>
+                <View style={styles.exclusiveBox}>
+                    <FlatList
+                        horizontal={true}
+                        style={styles.exclusiveList}
+                        data={images}
+                        showsHorizontalScrollIndicator={false}
+                        contentContainerStyle={{ alignItems: 'center', flex: 1, gap: 10}}
+                        renderItem={({item}, index) => (
+                            <Image source={item} key={index} style={styles.exclusiveImg}/>
+                        )}
+                        ></FlatList>
+                </View>
+            </View>
+            <View style={styles.watchmore}>
+                <Text style={styles.exclusiveTitle}>Porque você assistiu 'Breaking Bad'</Text>
+                <View style={styles.exclusiveBox}>
+                    <FlatList
+                        horizontal={true}
+                        style={styles.moreList}
+                        data={moreImages}
+                        showsHorizontalScrollIndicator={false}
+                        contentContainerStyle={{ alignItems: 'center', flex: 1, gap: 10}}
+                        renderItem={({item}, index) => (
+                            <Image source={item} key={index} style={styles.moreImg}/>
+                        )}
+                        ></FlatList>
                 </View>
             </View>
         </View>

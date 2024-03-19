@@ -5,7 +5,6 @@ export default StyleSheet.create({
         backgroundColor: '#000',
         flex: 1,
         display: 'flex',
-        alignItems: 'center'
     },
     mainMovie: {
         width: '100vw',
@@ -64,7 +63,7 @@ export default StyleSheet.create({
         color: '#B5B5B5',
         fontFamily: 'Figtree_500Medium',
         width: 330,
-        marginTop: 5
+        marginTop: 10
     },
     watch: {
         backgroundColor: '#fff',
@@ -75,7 +74,52 @@ export default StyleSheet.create({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        marginTop: 10
+    },
+    watchText: {
         fontFamily: 'Figtree_700Bold',
-
-    }
+    },
+    exclusives: {
+        width: '100%',
+        height: 240,
+        display: 'flex',
+        marginBottom: 30,
+        marginTop: -20
+    },
+    exclusiveTitle: {
+        fontFamily: 'Figtree_700Bold',
+        color: '#fff',
+        fontSize: 20,
+        marginLeft: 30,
+    },
+    exclusiveBox: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    exclusiveList: {
+        width: '100%',
+    },
+    exclusiveImg: {
+        width: 130,
+        height: 200,
+        marginTop: 10,
+        resizemode: 'contain',
+        left: 30
+    },
+    watchmore: {
+        width: '100%',
+        height: 170,
+        display: 'flex',
+    },
+    moreList: {
+        width: '100%',
+    },
+    moreImg: {
+        width: 80,
+        height: 130,
+        marginTop: 10,
+        resizemode: 'contain',
+        left: 30
+    },
 });
