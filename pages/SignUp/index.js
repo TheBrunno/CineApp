@@ -1,93 +1,58 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState, createRef } from 'react';
-import { Text, View, TouchableOpacity, TextInput } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import { useNavigation } from '@react-navigation/native';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import { useFonts, Figtree_300Light, Figtree_400Regular, Figtree_500Medium, Figtree_600SemiBold, Figtree_700Bold } from '@expo-google-fonts/figtree';
-import * as Animatable from 'react-native-animatable';
-import creditCardType from 'credit-card-type';
+import React from "react";
+import { Text, View } from "react-native";
+import creditCardType from "credit-card-type";
 
-import styles from './style';
+import InputGroup from "../../components/InputGroup";
+import SubmitButton, { RedirectMessage } from "../../components/SubmitButton";
+import BackButton from "../../components/BackButton";
+
+import styles from "./style";
 
 export default function SignUp() {
-    const navigation = useNavigation();
+  return (
+    <View style={styles.container}>
+      <BackButton />
+      <Text style={styles.h1}>Vamos fazer o seu cadastro</Text>
+      <View style={{ gap: 20 }}>
+        <Text style={styles.text}>
+          Primeiro, iremos precisar de alguns dados.
+        </Text>
 
-    const inputRefOne = createRef();
-    const inputRefTwo = createRef();
-  
-    const [isFocusedOne, setFocusOne] = useState(false);
-    const [isFocusedTwo, setFocusTwo] = useState(false);
-  
-    const [textOne, setTextOne] = useState('');
-    const [textTwo, setTextTwo] = useState('');
+        <View style={{ gap: 20 }}>
+          <View style={{ flexDirection: "row", gap: 20 }}>
+            <InputGroup label="Nome" />
+            <InputGroup label="Sobrenome" />
+          </View>
+          <InputGroup label="CPF" />
+        </View>
+      </View>
 
-    const [fontLoaded] = useFonts({
-        Figtree_300Light,
-        Figtree_400Regular,
-        Figtree_500Medium,
-        Figtree_600SemiBold,
-        Figtree_700Bold
-    });
+      <View style={{ gap: 20 }}>
+        <Text style={styles.text}>
+          Agora, criaremos a sua{" "}
+          <span style={{ fontWeight: "700" }}>conta.</span>
+        </Text>
 
-    if (!fontLoaded) {
-        return null;
-    }
+        <InputGroup label="E-mail" />
+        <InputGroup label="Senha" />
+      </View>
 
-    const toTop = {
-        from: {
-          top: 20
-        },
-        to: {
-          top: -8,
-        }
-      };
-    
-      const toBottom = {
-        from: {
-          top: -8
-        },
-        to: {
-          top: 20,
-        }
-      };
+      <View style={{ gap: 20 }}>
+        <Text style={styles.text}>
+          E por fim, configure o método de pagamento.
+        </Text>
 
+        <InputGroup label="Número do Cartão" />
 
-    return (
-        <LinearGradient
-            colors={['transparent', 'rgba(0,0,0,0.8)']}
-            style={styles.background}
-        >
-            <View style={styles.container}>
-                <View style={styles.textBoxes}>
-                    <View style={styles.textBox}>
-                        <Animatable.Text
-                            animation={isFocusedOne || textOne ? toTop : toBottom} 
-                            duration={100} 
-                            delay={0} 
-                            style={isFocusedOne || textOne ? [styles.inputText, { top: -8 }] : styles.inputText} 
-                            onPress={() => inputRefOne.current.focus()}>
-                            E-mail
-                        </Animatable.Text>
-                        <TextInput
-                            style={styles.input}
-                            keyboardType='default'
-                            onFocus={() => setFocusOne(true)}
-                            onBlur={() => setFocusOne(false)}
-                            onChangeText={newText => {
-                                setTextOne(newText)
-                                let cards = creditCardType(textOne)
-
-                                for(let card of cards){
-                                    console.log(card.niceType)
-                                }
-                                console.log('-------')
-                            }}
-                            ref={inputRefOne}
-                        />
-                    </View>
-                </View>
-            </View>
-        </LinearGradient>
-    );
+        <View style={{ flexDirection: "row", gap: 20 }}>
+          <InputGroup label="CVV" />
+          <InputGroup label="Vencimento" />
+        </View>
+      </View>
+      <View>
+        <SubmitButton label="Cadastrar" redirect="SignIn" />
+        <RedirectMessage text="Já possui uma conta?" redirect="SignIn" />
+      </View>
+    </View>
+  );
 }

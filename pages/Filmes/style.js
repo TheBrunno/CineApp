@@ -5,21 +5,25 @@ export default StyleSheet.create({
     backgroundColor: "#000",
     gap: 60,
     paddingBottom: 40,
+    paddingHorizontal: 20,
     position: "relative",
+    paddingTop: 160,
   },
   hero: {
-    paddingHorizontal: 20,
-    paddingVertical: 40,
-    height: 750,
+    height: 600,
     position: "relative",
     justifyContent: "flex-end",
+    border: "1px solid rgba(255,255,255,0.5)",
+    borderRadius: 20,
+    overflow: "hidden",
+    padding: 20,
   },
   heroContent: {
     gap: 20,
   },
   h1: {
     fontFamily: "Figtree-Bold",
-    fontSize: 70,
+    fontSize: 50,
     color: "#fff",
   },
   tags: {
@@ -49,7 +53,6 @@ export default StyleSheet.create({
   },
   carrossel: {
     gap: 20,
-    marginHorizontal: 20,
   },
   categoryTitle: {
     fontFamily: "Figtree-Bold",

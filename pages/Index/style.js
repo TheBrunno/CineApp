@@ -1,68 +1,67 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-    container: {
-        backgroundColor: '#16151B',
-        width: '100vw',
-        height: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-    },
-    logo: {
-        width: 300,
-        height: 275,
-    },
-    mainContainer: {
-        width: 300,
-        marginTop: '14vh'
-    },
-    mainText: {
-        fontFamily: 'Figtree_700Bold',
-        color: '#fff',
-        fontSize: 38,
-        textAlign: 'center',
-        marginTop: 70
-    },
-    secondaryText: {
-        fontFamily: 'Figtree_300Light',
-        color: '#fff',
-        fontSize: 18,
-        marginTop: 40,
-        textAlign: 'center'
-    },
-    buttonsContainer: {
-        backgroundColor: '#3A3940',
-        display: 'flex',
-        flexDirection: 'row',
-        width: '84%',
-        height: 60,
-        position: 'absolute',
-        bottom: 60,
-        borderRadius: 15
-    },
-    signinButton: {
-        backgroundColor: '#fff',
-        width: '50%',
-        borderRadius: 15,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItens: 'center',
-    },
-    signinText: {
-        textAlign: 'center',
-        fontFamily: 'Figtree_600SemiBold',
-        fontSize: 18
-    },
-    signupButton: {
-        width: '50%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItens: 'center',
-    },
-    signupText: {
-        textAlign: 'center',
-        fontFamily: 'Figtree_600SemiBold',
-        fontSize: 18,
-        color: '#fff'
-    }
+  container: {
+    backgroundColor: "#000",
+    flex: 1,
+    display: "flex",
+    alignItems: "center",
+    paddingVertical: 60,
+    paddingHorizontal: 40,
+  },
+  logo: {
+    width: 192,
+    height: 209,
+  },
+  content: {
+    flex: 1,
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  h1: {
+    fontSize: 40,
+    fontWeight: "700",
+    color: "#fff",
+    textAlign: "center",
+    fontFamily: "Figtree-Bold",
+  },
+  text: {
+    fontSize: 18,
+    color: "#fff",
+    textAlign: "center",
+    marginTop: 20,
+    fontFamily: "Figtree-Light",
+  },
+  buttons: {
+    flexDirection: "row",
+    height: 60,
+    width: "100%",
+    position: "relative",
+  },
+  signinButton: {
+    backgroundColor: "#E50914",
+    borderRadius: 15,
+    width: "52%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  signupButton: {
+    flex: 1,
+    backgroundColor: "#181818",
+    position: "absolute",
+    borderRadius: 15,
+    right: 0,
+    bottom: 0,
+    width: "55%",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100%",
+    zIndex: -1,
+  },
+  buttonText: {
+    fontWeight: "600",
+    fontSize: 18,
+    color: "#fff",
+    fontFamily: "Figtree-Semi",
+  },
 });

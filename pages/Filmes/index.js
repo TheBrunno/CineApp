@@ -41,10 +41,10 @@ export default function Home() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Navbar />
+      <Navbar type={1} />
       <View style={styles.hero}>
         <ImageBackground
-          source={require("../../assets/breakingBad.png")}
+          source={require("../../assets/blackclover.jpg")}
           style={{
             position: "absolute",
             height: "100%",
@@ -62,12 +62,11 @@ export default function Home() {
           />
         </ImageBackground>
         <View style={styles.heroContent}>
-          <Text style={styles.h1}>Breaking Bad</Text>
+          <Text style={styles.h1}>Black Clover</Text>
 
           <View style={styles.tags}>
-            <Text style={styles.tag}>2021</Text>
-            <Text style={styles.tag}>Drogas</Text>
-            <Text style={styles.tag}>Policia</Text>
+            <Text style={styles.tag}>Animes</Text>
+            <Text style={styles.tag}>Lançamento</Text>
             <Text style={styles.tag}>2h 35m</Text>
           </View>
 
@@ -100,7 +99,7 @@ export default function Home() {
 
       <View style={styles.carrossel}>
         <View style={{ flexDirection: "row", gap: 10, alignItems: "center" }}>
-          <Text style={styles.categoryTitle}>Mais curtidos</Text>
+          <Text style={styles.categoryTitle}>Lançamentos</Text>
           <AntDesign name="like1" size={30} color="#fff" />
         </View>
         <FlatList
