@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import {
   Text,
   View,
@@ -22,14 +22,34 @@ import {
 import style from "./style";
 import Navbar from "../../components/Navbar";
 
+async function getMoviesImages(){
+    let data;
+    await fetch('http://127.0.0.1:8000/api/filmes')
+      .then(response => response.json())
+      .then(json => data = json)
+      .catch(err => console.log('Erro de solicitação', err));
+
+      let imgs = [];
+      data.forEach(element => {
+        imgs.push(element.img);
+      });
+    return imgs;
+}
+
+
 export default function Home() {
   const navigation = useNavigation();
 
-  const [images, setImages] = useState([
-    require("../../assets/breakingBad.png"),
-    require("../../assets/gambit.jpg"),
-    require("../../assets/squid.jpg"),
-  ]);
+   const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      const imgUrls = await getMoviesImages(); // Assume getMoviesImages is defined elsewhere
+      setImages(imgUrls);
+    };
+
+    fetchImages();
+  });
 
   const [moreImages, setMoreImages] = useState([
     require("../../assets/saul.png"),
@@ -38,8 +58,10 @@ export default function Home() {
     require("../../assets/orange.jpg"),
     require("../../assets/wednesday.jpg"),
   ]);
+  
 
   return (
+    
     <SafeAreaView style={styles.container}>
       <Navbar />
       <View style={styles.hero}>
@@ -114,7 +136,7 @@ export default function Home() {
               style={styles.movieBanner}
             >
               <Image
-                source={item}
+                source={{uri: item}}
                 key={index}
                 style={{ flex: 1, resizeMode: "cover" }}
               />
