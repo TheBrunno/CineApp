@@ -6,6 +6,7 @@ import {
   Pressable,
   FlatList,
   ImageBackground,
+  ScrollView
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
@@ -40,8 +41,8 @@ export default function Home() {
   ]);
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Navbar type={1} />
+    <ScrollView style={styles.container}>
+      <Navbar type={0} />
       <View style={styles.hero}>
         <ImageBackground
           source={require("../../assets/blackclover.jpg")}
@@ -102,6 +103,7 @@ export default function Home() {
           <Text style={styles.categoryTitle}>Lançamentos</Text>
           <AntDesign name="like1" size={30} color="#fff" />
         </View>
+        <ScrollView>
         <FlatList
           horizontal={true}
           data={images}
@@ -120,6 +122,7 @@ export default function Home() {
             </Pressable>
           )}
         />
+        </ScrollView>
       </View>
 
       <View style={styles.carrossel}>
@@ -143,6 +146,6 @@ export default function Home() {
           )}
         />
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 }

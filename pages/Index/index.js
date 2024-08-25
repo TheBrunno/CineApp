@@ -10,7 +10,7 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Image source={require("../../assets/logo.svg")} style={styles.logo} />
+        <Image source={require("../../assets/logo.png")} style={styles.logo} />
       </View>
       <View style={styles.content}>
         <View>
@@ -24,12 +24,12 @@ export default function Index() {
           >
             <Text style={styles.buttonText}>Entrar</Text>
           </TouchableOpacity>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             style={styles.signupButton}
             onPress={() => navigation.navigate("SignUp")}
           >
             <Text style={styles.buttonText}>Cadastrar</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </View>
     </View>

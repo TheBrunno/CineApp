@@ -6,6 +6,7 @@ export default StyleSheet.create({
     gap: 60,
     paddingBottom: 40,
     position: "relative",
+    paddingTop: 25,
   },
   hero: {
     paddingHorizontal: 20,

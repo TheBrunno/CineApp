@@ -9,7 +9,9 @@ export default function SubmitButton({ label, redirect }) {
   return (
     <Pressable
       style={styles.button}
-      onPress={() => navigation.navigate(redirect)}
+      onPress={() =>   navigation.navigate('DrawerContent', {
+        screen: redirect,
+      })}
     >
       <Text style={styles.buttonText}>{label}</Text>
     </Pressable>
@@ -31,10 +33,6 @@ export function RedirectMessage({ text, cta = "Clique aqui", redirect }) {
         }}
       >
         {text}
-        <span style={{ fontWeight: "600", color: "#fff", letterSpacing: 1 }}>
-          {" "}
-          {cta}
-        </span>
       </Text>
     </Pressable>
   );

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Cine",
-    "slug": "Cine",
+    "name": "cine-app4",
+    "slug": "cine-app4",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,9 +11,6 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
     "ios": {
       "supportsTablet": true
     },

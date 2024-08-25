@@ -7,7 +7,7 @@ export default StyleSheet.create({
     paddingBottom: 40,
     paddingHorizontal: 20,
     position: "relative",
-    paddingTop: 160,
+    paddingTop: 25,
   },
   hero: {
     height: 600,

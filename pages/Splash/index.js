@@ -15,7 +15,7 @@ export default function Splash() {
 
   return (
     <View style={styles.container}>
-      <Image source={require("../../assets/logo.svg")} style={styles.logo} />
+      <Image source={require("../../assets/logo.png")} style={styles.logo} />
     </View>
   );
 }

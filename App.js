@@ -23,30 +23,16 @@ const defaultScreenOptions = {
 
 const DrawerContent = () => (
   <Drawer.Navigator
-    initialRouteName="Filmes"
+    initialRouteName="Home"
     screenOptions={{
       ...defaultScreenOptions,
-      // drawerStyle: {
-      //   backgroundColor: "#000",
-      //   padding: 40,
-      //   justifyContent: "center",
-      //   display: "flex",
-      // },
-      // drawerItemStyle: {
-      //   height: 50,
-      //   paddingHorizontal: 20,
-      //   borderLeft: "5px solid #fff",
-      //   borderRadius: "none",
-      //   backgroundColor: "none",
-      //   color: "#fff",
-      // },
     }}
   >
     <Drawer.Screen
       name="Home"
       component={Home}
       options={{
-        title: "Início",
+        title: "Home",
       }}
     />
     <Drawer.Screen
@@ -66,6 +52,19 @@ const DrawerContent = () => (
   </Drawer.Navigator>
 );
 
+const MainStack = () => (
+  <Stack.Navigator
+    initialRouteName="Splash"
+    screenOptions={defaultScreenOptions}
+  >
+    <Stack.Screen name="Splash" component={Splash} />
+    <Stack.Screen name="SignIn" component={SignIn} />
+    <Stack.Screen name="SignUp" component={SignUp} />
+    <Stack.Screen name="Index" component={Index} />
+    <Stack.Screen name="DrawerContent" component={DrawerContent} options={{ headerShown: false }} />
+  </Stack.Navigator>
+);
+
 export default function App() {
   useEffect(() => {
     loadFonts();
@@ -73,7 +72,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <DrawerContent />
+      <MainStack />
     </NavigationContainer>
   );
 }

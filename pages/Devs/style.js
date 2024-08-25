@@ -7,8 +7,10 @@ export default StyleSheet.create({
     padding: 20,
     justifyContent: "center",
     gap: 50,
+    paddingTop: 25,
   },
   icon: {
+    paddingTop: 25,
     position: "absolute",
     top: 20,
     left: 20,

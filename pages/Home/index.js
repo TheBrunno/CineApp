@@ -6,6 +6,7 @@ import {
   Pressable,
   FlatList,
   ImageBackground,
+  ScrollView
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
@@ -62,7 +63,7 @@ export default function Home() {
 
   return (
     
-    <SafeAreaView style={styles.container}>
+    <ScrollView style={styles.container}>
       <Navbar />
       <View style={styles.hero}>
         <ImageBackground
@@ -166,6 +167,6 @@ export default function Home() {
           )}
         />
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 }

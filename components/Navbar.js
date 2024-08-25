@@ -43,7 +43,7 @@ export default function Navbar({ type = 0 }) {
               style={{
                 width: 40,
                 height: 40,
-                borderRadius: "100%",
+                borderRadius: 100,
               }}
             />
           </View>
